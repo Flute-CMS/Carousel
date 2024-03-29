@@ -1,0 +1,14 @@
+{
+    "key": "Carousel",
+    "name": "Carousel",
+    "description": "Создает карусель на сайте",
+    "version": "1.0.0",
+    "authors": [
+        "Flames"
+    ],
+    "url": "",
+    "providers": [
+        "Flute\\Modules\\Carousel\\ServiceProviders\\CarouselServiceProvider"
+    ],
+    "dependencies": []
+}
