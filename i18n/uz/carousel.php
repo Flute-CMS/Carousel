@@ -3,7 +3,7 @@
 return [
     'title' => 'Karusel',
     'setting' => 'Slayd sozlamalari',
-    'setting_description' => "Bu yerda siz slayd sozlamalarini o'zgartirishingiz mumkin",
+    'setting_description' => "Bu yerda siz slayd sozlamalarini o‘zgartirishingiz mumkin",
     'not_found' => 'Slayd topilmadi!',
     'add' => "Slayd qo‘shish",
     'add_title' => 'Slayd qo‘shish',
