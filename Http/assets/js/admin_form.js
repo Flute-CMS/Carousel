@@ -13,40 +13,6 @@ function serializeFormCarousel($form) {
     return formData;
 }
 
-function sendCarouselRequest(data, path = null, method = 'POST') {
-    let result = null;
-
-    $.ajax({
-        url: u(path),
-        type: method,
-        data: data,
-        processData: false,
-        async: false,
-        success: function (response) {
-            toast({
-                message: response?.success || translate('def.success'),
-                type: 'success',
-            });
-
-            result = response;
-
-            Modals.clear();
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.error('error request', jqXHR, textStatus, errorThrown);
-            toast({
-                message:
-                    jqXHR.responseJSON?.error ?? translate('def.unknown_error'),
-                type: 'error',
-            });
-
-            result = jqXHR.responseJSON;
-        },
-    });
-
-    return result;
-}
-
 $(document).on('submit', '[data-carouselform]', (ev) => {
     let $form = $(ev.currentTarget);
 
@@ -65,6 +31,6 @@ $(document).on('submit', '[data-carouselform]', (ev) => {
     }
 
     if (ev.target.checkValidity()) {
-        sendCarouselRequest(form, url, method);
+        sendRequestFormData(form, url, method);
     }
 });

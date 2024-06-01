@@ -1,19 +1,27 @@
 @extends('Core.Admin.Http.Views.layout', [
-    'title' => __('admin.title', ['name' => __('carousel.edit_title', [
-        ':name' => $slide->title
-    ])]),
+    'title' => __('admin.title', [
+        'name' => __('carousel.edit_title', [
+            ':name' => $slide->title,
+        ]),
+    ]),
 ])
 
 @push('content')
-    <div class="admin-header d-flex align-items-center">
-        <a href="{{ url('admin/carousel/list') }}" class="back_btn">
-            <i class="ph ph-caret-left"></i>
-        </a>
+    <div class="admin-header d-flex justify-content-between align-items-center">
         <div>
+            <a class="back-btn" href="{{ url('admin/carousel/list') }}">
+                <i class="ph ph-arrow-left ignore"></i>
+                @t('def.back')
+            </a>
             <h2>@t('carousel.edit_title', [
-                ':name' => $slide->title
+                ':name' => $slide->title,
             ])</h2>
             <p>@t('carousel.edit_description')</p>
+        </div>
+        <div>
+            <button data-deleteaction="{{ $slide->id }}" data-deletepath="carousel" class="btn size-s error outline">
+                @t('def.delete')
+            </button>
         </div>
     </div>
 

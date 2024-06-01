@@ -13,7 +13,7 @@ class AdminApiController extends AbstractController
 {
     protected $carouselService;
 
-    public function __construct( CarouselService $carouselService )
+    public function __construct(CarouselService $carouselService)
     {
         $this->carouselService = $carouselService;
 
@@ -22,7 +22,7 @@ class AdminApiController extends AbstractController
         $this->middleware(CSRFMiddleware::class);
     }
 
-    public function store(FluteRequest $request) : Response
+    public function store(FluteRequest $request): Response
     {
         try {
             $this->carouselService->store($request->title, $request->description, $request->files->get('image'), $request->input('link', null));
@@ -33,7 +33,7 @@ class AdminApiController extends AbstractController
         }
     }
 
-    public function delete(FluteRequest $request, $id) : Response
+    public function delete(FluteRequest $request, $id): Response
     {
         try {
             $this->carouselService->delete((int) $id);
@@ -44,7 +44,7 @@ class AdminApiController extends AbstractController
         }
     }
 
-    public function update(FluteRequest $request, $id) : Response
+    public function update(FluteRequest $request, $id): Response
     {
         try {
             $this->carouselService->update((int) $id, $request->title, $request->description, $request->files->get('image'), $request->input('link', null));
