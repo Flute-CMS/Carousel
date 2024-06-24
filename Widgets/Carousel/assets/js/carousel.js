@@ -35,12 +35,18 @@ const addDotBtnsAndClickHandlersCarousel = (emblaApiCarousel, dotsNode) => {
         dotsNode.innerHTML = '';
     };
 };
-const addTogglePrevNextBtnsActiveCarousel = (emblaApiCarousel, prevBtn, nextBtn) => {
+const addTogglePrevNextBtnsActiveCarousel = (
+    emblaApiCarousel,
+    prevBtn,
+    nextBtn,
+) => {
     const togglePrevNextBtnsState = () => {
-        if (emblaApiCarousel.canScrollPrev()) prevBtn.removeAttribute('disabled');
+        if (emblaApiCarousel.canScrollPrev())
+            prevBtn.removeAttribute('disabled');
         else prevBtn.setAttribute('disabled', 'disabled');
 
-        if (emblaApiCarousel.canScrollNext()) nextBtn.removeAttribute('disabled');
+        if (emblaApiCarousel.canScrollNext())
+            nextBtn.removeAttribute('disabled');
         else nextBtn.setAttribute('disabled', 'disabled');
     };
 
@@ -78,15 +84,20 @@ const addPrevNextBtnsClickHandlers = (emblaApiCarousel, prevBtn, nextBtn) => {
     };
 };
 
-const OPTIONS_CAROUSEL = {};
+const OPTIONS_CAROUSEL = {
+    loop: true,
+};
 
 const emblaNodeCarousel = document.querySelector('.embla');
-const viewportNodeCarousel = emblaNodeCarousel.querySelector('.embla__viewport');
+const viewportNodeCarousel =
+    emblaNodeCarousel.querySelector('.embla__viewport');
 const prevBtnCarousel = emblaNodeCarousel.querySelector('.embla__button--prev');
 const nextBtnCarousel = emblaNodeCarousel.querySelector('.embla__button--next');
 const dotsNodeCarousel = document.querySelector('.embla__dots');
 
-const emblaApiCarousel = EmblaCarousel(viewportNodeCarousel, OPTIONS_CAROUSEL);
+const emblaApiCarousel = EmblaCarousel(viewportNodeCarousel, OPTIONS_CAROUSEL, [
+    EmblaCarouselAutoplay({ playOnInit: true, delay: 5000 }),
+]);
 
 const removePrevNextBtnsClickHandlersC = addPrevNextBtnsClickHandlers(
     emblaApiCarousel,

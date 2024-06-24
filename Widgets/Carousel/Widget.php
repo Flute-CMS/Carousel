@@ -11,7 +11,8 @@ class Widget extends AbstractWidget
     public function __construct()
     {
         $this->setAssets([
-            'https://unpkg.com/embla-carousel@8.0.0/embla-carousel.umd.js',
+            'https://unpkg.com/embla-carousel-autoplay@8.1.5/embla-carousel-autoplay.umd.js',
+            'https://unpkg.com/embla-carousel@8.1.5/embla-carousel.umd.js',
             mm('Carousel', 'Widgets/Carousel/assets/js/carousel.js'),
             mm('Carousel', 'Widgets/Carousel/assets/scss/carousel.scss'),
         ]);
