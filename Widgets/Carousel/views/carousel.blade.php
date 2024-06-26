@@ -8,8 +8,8 @@
 
                         <div class="slide__text">
                             <div>
-                                <h1>{{ $slide->title }}</h1>
-                                <p>{{ $slide->description }}</p>
+                                <h1>{{ __($slide->title) }}</h1>
+                                <p>{{ __($slide->description) }}</p>
                             </div>
 
                             @if ($slide->link)
