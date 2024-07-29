@@ -1,12 +1,12 @@
 <?php
 
 return [
-    "title" => "Karuzela",
-     "short_desc" => "Tworzenie slajdów do karuzeli",
+    "title" => "Slider",
+    "short_desc" => "Tworzenie slajdów na stronie głównej",
     "setting" => "Ustawienia slajdów",
     "setting_description" => "Na tej stronie możesz zmieniać ustawienia slajdów",
     "not_found" => "Slajd nie znaleziony!",
-    "add" => "Dodaj slajd",
+    "add" => "Dodaj",
     "add_title" => "Dodawanie slajdu",
     "add_description" => "Na tej stronie możesz dodać nowy slajd",
     "title_label" => "Tytuł slajdu",
